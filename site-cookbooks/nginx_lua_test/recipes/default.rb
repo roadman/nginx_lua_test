@@ -19,6 +19,12 @@ git "/usr/local/src/nginx_lua_test" do
     action :sync
 end
 
+user "nginx" do
+    comment "system nginx"
+    system true
+    shell "/sbin/nologin"
+end
+
 bash "install_nginx_lua_test" do
     user "root"
     cwd "/usr/local/src/nginx_lua_test"
