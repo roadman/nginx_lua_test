@@ -1,9 +1,11 @@
 #!/bin/sh
+git submodule init
+git submodule update
 
-cd ../lua-nginx-module
+cd lua-nginx-module
 git checkout master
 
-cd ../../nginx
+cd ../nginx
 make clean
 git checkout v1.5.10
 
