@@ -17,6 +17,7 @@ bash "install_nginx_lua_test" do
     user "root"
     cwd "/usr/local/src/"
     code <<-EOH
+    rm -fr nginx_lua_test
     git clone https://github.com/roadman/nginx_lua_test.git
     cd nginx_lua_test
     ./tools/buildsh
