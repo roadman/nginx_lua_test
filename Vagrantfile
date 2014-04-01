@@ -23,9 +23,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
 #  config.vm.provision :chef_solo do |chef|
-#    chef.cookbooks_path = "/vagrant/cookbooks"
-#    #chef.roles_path = "./roles"
-#    chef.add_recipe "hello"
+#    chef.cookbooks_path = "/vagrant/site-cookbooks"
+#    chef.add_recipe "base"
+#    chef.add_recipe "nginx_lua_test"
 #  end
 
 end

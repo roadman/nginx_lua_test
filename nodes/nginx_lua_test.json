@@ -1,1 +1,1 @@
-{  "run_list":[    "recipe[base]",    "recipe[nginx_lua_test]"    ]}
+{  "run_list":[    "recipe[base]",    "recipe[xbuild_ruby]",    "recipe[nginx_lua_test]"    ]}
