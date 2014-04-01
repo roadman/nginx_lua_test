@@ -1,1 +1,5 @@
-/cookbooks/
+.vagrant
+vendor/bundle
+.bundle/
+.*.sw[a-z]
+Gemfile.lock
