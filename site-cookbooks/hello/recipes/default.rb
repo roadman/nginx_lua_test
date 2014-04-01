@@ -6,7 +6,12 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-%w{yum vim}.each do |pkg|
-package pkg do
-    action :install
+%w{yum vim git}.each do |pkg|
+  package pkg do
+      action :install
+  end
+end
+
+service 'iptables' do
+    action [:disable, :stop]
 end
