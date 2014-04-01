@@ -1,9 +1,9 @@
 #!/bin/sh
 
-cd lua-nginx-module
+cd ../lua-nginx-module
 git checkout master
 
-cd ../nginx
+cd ../../nginx
 make clean
 git checkout v1.5.10
 
