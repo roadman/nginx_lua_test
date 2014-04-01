@@ -1,0 +1,26 @@
+#!/bin/sh
+
+cd lua-nginx-module
+git checkout master
+
+cd ../nginx
+make clean
+git checkout v1.5.10
+
+./configure \
+  --user=nginx \
+  --prefix=/usr/local/ngx_http_test_lua \
+  --error-log-path=/usr/local/ngx_http_test_lua/log/error.log \
+  --http-log-path=/usr/local/ngx_http_test_lua/log/access.log \
+  --pid-path=/usr/local/ngx_http_test_lua/run/nginx_test_lua.pid \
+  --lock-path=/usr/local/ngx_http_test_lua/lock/nginx_test_lua.lock \
+  --with-cc-opt="-I /usr/include/pcre -g" \
+  --with-debug \
+  --with-http_ssl_module \
+  --with-http_realip_module \
+  --with-http_stub_status_module \
+  --add-module=../lua-nginx-module
+
+make
+sudo make install
+

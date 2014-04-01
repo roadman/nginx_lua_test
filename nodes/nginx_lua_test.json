@@ -1,1 +1,1 @@
-{  "run_list":[    "recipe[base]"    ]}
+{  "run_list":[    "recipe[base]",    "recipe[nginx_lua_test]"    ]}
