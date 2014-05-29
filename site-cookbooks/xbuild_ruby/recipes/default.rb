@@ -6,6 +6,11 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+%w{openssl-devel}.each do |pkg|
+  package pkg do
+      action :install
+  end
+end
 
 git "/home/vagrant/xbuild" do
     user "vagrant"
