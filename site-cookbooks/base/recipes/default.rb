@@ -15,3 +15,11 @@ end
 service 'iptables' do
     action [:disable, :stop]
 end
+
+bash "set_localedef" do
+    user "root"
+    #cwd "/usr/local/src/nginx_lua_test"
+    code <<-EOH
+    localedef -f UTF-8 -i ja_JP ja_JP
+    EOH
+end
