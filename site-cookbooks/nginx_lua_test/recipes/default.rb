@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-%w{git lua-devel pcre-devel valgrind curl}.each do |pkg|
+%w{git lua-devel pcre-devel valgrind curl memcached}.each do |pkg|
     package pkg do
         action :install
     end
@@ -17,6 +17,11 @@ git "/usr/local/src/nginx_lua_test" do
     repository "https://github.com/roadman/nginx_lua_test.git"
     revision "master"
     action :sync
+end
+
+service "memcached" do
+    supports :status => true, :restart => true, :reload => true
+    action [ :enable, :start ]
 end
 
 user "nginx" do
