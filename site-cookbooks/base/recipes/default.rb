@@ -23,3 +23,10 @@ bash "set_localedef" do
     localedef -f UTF-8 -i ja_JP ja_JP
     EOH
 end
+
+bash "set_date_jst" do
+    user "root"
+    code <<-EOH
+    cp  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+    EOH
+end
